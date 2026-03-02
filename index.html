@@ -110,60 +110,53 @@
       border-radius: 9999px;
       font-size: 16px;
       font-weight: 600;
-      transition: all 0.15s ease;
+      transition: all 0.2s ease;
       white-space: nowrap;
       position: relative;
-      border: 3px solid var(--charcoal);
-      box-shadow: 4px 5px 0 0 var(--charcoal);
-      transform: translate(0, 0);
+      border: none;
+      box-shadow: none;
     }
     .btn:hover {
-      transform: translate(2px, 2px);
-      box-shadow: 2px 3px 0 0 var(--charcoal);
+      transform: none;
     }
     .btn:active {
-      transform: translate(4px, 5px);
-      box-shadow: 0 0 0 0 var(--charcoal);
+      transform: scale(0.97);
     }
     .btn:focus-visible {
       outline: 3px solid var(--coral);
       outline-offset: 3px;
     }
     .btn-primary {
-      background: var(--cta-orange);
+      background: rgba(255, 107, 53, 0.8);
       color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--cta-orange);
     }
     .btn-secondary {
       background: transparent;
-      border-color: var(--cta-orange);
+      border: 2px solid var(--cta-orange);
       color: var(--cta-orange);
-      box-shadow: 4px 5px 0 0 var(--cta-orange);
     }
     .btn-secondary:hover {
       background: var(--cta-orange);
       color: var(--white);
-      box-shadow: 2px 3px 0 0 var(--cta-orange);
-    }
-    .btn-secondary:active {
-      box-shadow: 0 0 0 0 var(--cta-orange);
     }
     .btn-white {
-      background: var(--cta-orange);
+      background: rgba(255, 107, 53, 0.8);
       color: var(--white);
+    }
+    .btn-white:hover {
+      background: var(--cta-orange);
     }
     .btn-outline-white {
-      background: rgba(255,255,255,0.12);
-      border-color: var(--white);
+      background: rgba(255,255,255,0.15);
+      border: 2px solid var(--white);
       color: var(--white);
-      box-shadow: 4px 5px 0 0 rgba(255,255,255,0.6);
     }
     .btn-outline-white:hover {
-      background: rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.3);
       color: var(--white);
-      box-shadow: 2px 3px 0 0 rgba(255,255,255,0.6);
-    }
-    .btn-outline-white:active {
-      box-shadow: 0 0 0 0 rgba(255,255,255,0.6);
     }
     .btn svg {
       width: 18px;
