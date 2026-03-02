@@ -177,10 +177,10 @@
       left: 0;
       right: 0;
       z-index: 1000;
-      background: rgba(255,255,255,0.95);
+      background: rgba(220,233,250,0.92);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
+      border-bottom: 1px solid rgba(46,119,212,0.1);
       height: 72px;
       transition: all 0.3s ease;
     }
@@ -209,22 +209,10 @@
     .nav-links a {
       font-size: 15px;
       font-weight: 500;
-      color: var(--slate);
+      color: var(--teal);
       transition: color 0.2s ease;
-      position: relative;
     }
-    .nav-links a::after {
-      content: '';
-      position: absolute;
-      bottom: -4px;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: var(--teal);
-      transition: width 0.3s ease;
-    }
-    .nav-links a:hover { color: var(--teal); }
-    .nav-links a:hover::after { width: 100%; }
+    .nav-links a:hover { color: var(--teal-dark); }
     .nav-cta {
       display: none;
     }
@@ -865,7 +853,7 @@
     /* ===== HOW IT WORKS ===== */
     .how-it-works {
       padding: 96px 0;
-      background: var(--white);
+      background: rgba(220,233,250,0.45);
     }
     .steps-grid {
       display: grid;
@@ -1461,7 +1449,7 @@
     </div>
     <div class="quote-wave-bottom" aria-hidden="true">
       <svg viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-        <path d="M0,40 C120,80 240,0 360,40 C480,80 600,0 720,40 C840,80 960,0 1080,40 C1200,80 1320,0 1440,40 L1440,80 L0,80 Z" fill="#FFFFFF"/>
+        <path d="M0,40 C120,80 240,0 360,40 C480,80 600,0 720,40 C840,80 960,0 1080,40 C1200,80 1320,0 1440,40 L1440,80 L0,80 Z" fill="#e6eef8"/>
       </svg>
     </div>
   </section>
