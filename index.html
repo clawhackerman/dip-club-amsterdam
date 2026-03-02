@@ -1,0 +1,1320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dip Club Amsterdam — Seek Discomfort. Find Yourself.</title>
+  <meta name="description" content="Amsterdam's urban wellness community. Weekly ice baths, breathwork sessions, and outdoor adventures. Join 200+ brave souls who chose discomfort over comfort.">
+  <meta name="theme-color" content="#2C5F5D">
+  <meta property="og:title" content="Dip Club Amsterdam — Seek Discomfort. Find Yourself.">
+  <meta property="og:description" content="Amsterdam's urban wellness community. Weekly ice baths, breathwork & outdoor adventures.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    body {
+      font-family: 'DM Sans', system-ui, sans-serif;
+      color: #2B2B2B;
+      background: #FFFFFF;
+      line-height: 1.7;
+      font-size: 16px;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font-family: inherit; cursor: pointer; border: none; background: none; }
+    ul, ol { list-style: none; }
+
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --teal: #2C5F5D;
+      --teal-dark: #1E4341;
+      --ice: #4A90A4;
+      --coral: #E8735C;
+      --coral-dark: #D4604A;
+      --charcoal: #2B2B2B;
+      --slate: #5A5A5A;
+      --light: #F8F9FA;
+      --white: #FFFFFF;
+      --green: #4CAF50;
+      --orange: #FF6B35;
+      --radius-sm: 8px;
+      --radius-md: 16px;
+      --shadow-sm: 0 4px 12px rgba(0,0,0,0.08);
+      --shadow-md: 0 8px 24px rgba(0,0,0,0.12);
+      --shadow-lg: 0 16px 48px rgba(0,0,0,0.16);
+      --ease: cubic-bezier(0.4, 0, 0.2, 1);
+      --container: 1320px;
+    }
+
+    /* ===== UTILITIES ===== */
+    .container {
+      max-width: var(--container);
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+    @media (min-width: 1024px) {
+      .container { padding: 0 48px; }
+    }
+    .serif { font-family: 'Playfair Display', Georgia, serif; }
+    .serif-italic { font-family: 'Playfair Display', Georgia, serif; font-style: italic; }
+    .uppercase {
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .sr-only {
+      position: absolute; width: 1px; height: 1px;
+      padding: 0; margin: -1px; overflow: hidden;
+      clip: rect(0,0,0,0); border: 0;
+    }
+
+    /* ===== SCROLL ANIMATION ===== */
+    .reveal {
+      opacity: 0;
+      transform: translateY(24px);
+      transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 16px 32px;
+      border-radius: var(--radius-sm);
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+    .btn:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 3px;
+    }
+    .btn-primary {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-primary:hover {
+      background: var(--teal-dark);
+      transform: scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-secondary {
+      background: transparent;
+      border: 2px solid var(--teal);
+      color: var(--teal);
+      padding: 14px 30px;
+    }
+    .btn-secondary:hover {
+      background: var(--teal);
+      color: var(--white);
+    }
+    .btn-white {
+      background: var(--white);
+      color: var(--teal);
+    }
+    .btn-white:hover {
+      background: var(--light);
+      transform: scale(1.02);
+      box-shadow: var(--shadow-md);
+    }
+    .btn-outline-white {
+      background: transparent;
+      border: 2px solid var(--white);
+      color: var(--white);
+      padding: 14px 30px;
+    }
+    .btn-outline-white:hover {
+      background: var(--white);
+      color: var(--teal);
+    }
+    .btn svg {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(0,0,0,0.05);
+      height: 72px;
+      transition: all 0.3s ease;
+    }
+    .nav.scrolled {
+      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .nav-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 100%;
+    }
+    .nav-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--teal);
+      letter-spacing: -0.02em;
+    }
+    .nav-logo span { color: var(--coral); }
+    .nav-links {
+      display: none;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--slate);
+      transition: color 0.2s ease;
+      position: relative;
+    }
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--teal);
+      transition: width 0.3s ease;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-links a:hover::after { width: 100%; }
+    .nav-cta {
+      display: none;
+    }
+    .nav-toggle {
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      padding: 8px;
+      min-width: 44px;
+      min-height: 44px;
+      justify-content: center;
+      align-items: center;
+    }
+    .nav-toggle span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--charcoal);
+      transition: all 0.3s ease;
+      border-radius: 2px;
+    }
+    .nav-toggle.active span:nth-child(1) { transform: rotate(45deg) translate(5px, 5px); }
+    .nav-toggle.active span:nth-child(2) { opacity: 0; }
+    .nav-toggle.active span:nth-child(3) { transform: rotate(-45deg) translate(5px, -5px); }
+
+    /* Mobile Menu Overlay */
+    .mobile-menu {
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      background: var(--white);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 32px;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+    }
+    .mobile-menu.open {
+      opacity: 1;
+      pointer-events: auto;
+    }
+    .mobile-menu a {
+      font-size: 28px;
+      font-weight: 600;
+      color: var(--charcoal);
+      transition: color 0.2s;
+    }
+    .mobile-menu a:hover { color: var(--teal); }
+
+    @media (min-width: 768px) {
+      .nav { height: 80px; }
+      .nav-links { display: flex; }
+      .nav-cta { display: inline-flex; }
+      .nav-toggle { display: none; }
+    }
+
+    /* ===== HERO SECTION ===== */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-end;
+      padding: 0 0 64px;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+    }
+    .hero-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .hero-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%);
+    }
+    .hero-grain {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      opacity: 0.035;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+      background-repeat: repeat;
+      pointer-events: none;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      color: var(--white);
+      max-width: 720px;
+    }
+    .hero-label {
+      display: inline-block;
+      background: rgba(255,255,255,0.15);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      padding: 8px 20px;
+      border-radius: 50px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(40px, 8vw, 72px);
+      font-weight: 700;
+      line-height: 1.08;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.3);
+    }
+    .hero h1 em {
+      font-style: italic;
+      color: var(--coral);
+    }
+    .hero-sub {
+      font-size: clamp(17px, 2.2vw, 20px);
+      line-height: 1.6;
+      margin-bottom: 32px;
+      opacity: 0.92;
+      max-width: 540px;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.2);
+    }
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+    .hero-meta {
+      font-size: 14px;
+      opacity: 0.75;
+      letter-spacing: 0.01em;
+    }
+    .hero-meta span { margin: 0 8px; }
+    .hero-scroll {
+      position: absolute;
+      bottom: 24px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+      color: var(--white);
+      opacity: 0.6;
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      animation: bounce 2s ease infinite;
+    }
+    .hero-scroll svg {
+      width: 20px;
+      height: 20px;
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateX(-50%) translateY(0); }
+      50% { transform: translateX(-50%) translateY(6px); }
+    }
+
+    /* ===== PILLARS / WHAT WE DO ===== */
+    .pillars {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .section-header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+    .section-label {
+      display: inline-block;
+      color: var(--teal);
+      margin-bottom: 16px;
+    }
+    .section-header h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      color: var(--charcoal);
+    }
+    .section-header h2 em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: var(--teal);
+    }
+    .section-header p {
+      margin-top: 16px;
+      font-size: 18px;
+      color: var(--slate);
+      max-width: 560px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pillars-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+    @media (min-width: 768px) {
+      .pillars-grid { grid-template-columns: repeat(3, 1fr); gap: 32px; }
+    }
+    .pillar-card {
+      background: var(--white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-sm);
+      overflow: hidden;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .pillar-card:hover {
+      transform: translateY(-8px);
+      box-shadow: var(--shadow-md);
+    }
+    .pillar-card:focus-within {
+      outline: 3px solid var(--coral);
+      outline-offset: 2px;
+    }
+    .pillar-img {
+      position: relative;
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+    }
+    .pillar-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .pillar-card:hover .pillar-img img {
+      transform: scale(1.05);
+    }
+    .pillar-img .pillar-tag {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: var(--teal);
+      color: var(--white);
+      padding: 6px 14px;
+      border-radius: 50px;
+      font-size: 12px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .pillar-body {
+      padding: 24px;
+    }
+    @media (min-width: 1024px) {
+      .pillar-body { padding: 32px; }
+    }
+    .pillar-body h3 {
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      line-height: 1.3;
+    }
+    .pillar-body p {
+      font-size: 16px;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+    .pillar-body .pillar-detail {
+      margin-top: 16px;
+      font-size: 14px;
+      color: var(--teal);
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* ===== COMMUNITY ===== */
+    .community {
+      padding: 96px 0;
+      background: var(--light);
+    }
+    .community-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 48px;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .community-grid { grid-template-columns: 1fr 1fr; gap: 64px; }
+    }
+    .community-images {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .community-images .img-wrapper {
+      border-radius: var(--radius-md);
+      overflow: hidden;
+      position: relative;
+    }
+    .community-images .img-wrapper img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s var(--ease);
+    }
+    .community-images .img-wrapper:hover img {
+      transform: scale(1.05);
+    }
+    .community-images .img-tall {
+      grid-row: span 2;
+      min-height: 300px;
+    }
+    @media (min-width: 768px) {
+      .community-images .img-tall { min-height: 400px; }
+    }
+    .community-images .img-short {
+      min-height: 140px;
+    }
+    @media (min-width: 768px) {
+      .community-images .img-short { min-height: 190px; }
+    }
+    .community-content h2 {
+      font-size: clamp(32px, 5vw, 48px);
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 20px;
+    }
+    .community-content h2 em {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      color: var(--teal);
+    }
+    .community-content > p {
+      font-size: 18px;
+      color: var(--slate);
+      line-height: 1.7;
+      margin-bottom: 40px;
+    }
+
+    /* Stats */
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .stat {
+      text-align: center;
+    }
+    .stat-number {
+      font-size: clamp(32px, 4vw, 48px);
+      font-weight: 700;
+      color: var(--teal);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .stat-label {
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--slate);
+      font-weight: 500;
+    }
+
+    /* Testimonial */
+    .testimonial {
+      background: var(--white);
+      border-left: 4px solid var(--teal);
+      padding: 28px;
+      border-radius: var(--radius-sm);
+    }
+    .testimonial blockquote {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.6;
+      color: var(--charcoal);
+      margin-bottom: 16px;
+    }
+    .testimonial-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .testimonial-avatar {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .testimonial-name {
+      font-weight: 600;
+      font-size: 15px;
+    }
+    .testimonial-role {
+      font-size: 13px;
+      color: var(--slate);
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how-it-works {
+      padding: 96px 0;
+      background: var(--white);
+    }
+    .steps-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+    @media (min-width: 768px) {
+      .steps-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+      }
+    }
+    .step-card {
+      position: relative;
+      background: var(--light);
+      border-radius: var(--radius-md);
+      padding: 32px 28px;
+      text-align: center;
+      transition: transform 0.4s var(--ease), box-shadow 0.4s var(--ease);
+    }
+    .step-card:hover {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-sm);
+    }
+    .step-number {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 56px;
+      height: 56px;
+      border-radius: 50%;
+      background: var(--teal);
+      color: var(--white);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    .step-card h3 {
+      font-size: 22px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .step-card p {
+      font-size: 16px;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+    /* Step connector arrows (desktop only) */
+    @media (min-width: 768px) {
+      .step-card:not(:last-child)::after {
+        content: '';
+        position: absolute;
+        top: 52px;
+        right: -20px;
+        width: 12px;
+        height: 12px;
+        border-right: 2px solid var(--teal);
+        border-bottom: 2px solid var(--teal);
+        transform: rotate(-45deg);
+        opacity: 0.4;
+      }
+    }
+    .how-cta {
+      text-align: center;
+    }
+
+    /* ===== FAQ ===== */
+    .faq {
+      padding: 96px 0;
+      background: var(--light);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid rgba(0,0,0,0.08);
+    }
+    .faq-question {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      padding: 24px 0;
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--charcoal);
+      text-align: left;
+      cursor: pointer;
+      gap: 16px;
+      min-height: 44px;
+      transition: color 0.2s ease;
+    }
+    .faq-question:hover { color: var(--teal); }
+    .faq-question:focus-visible {
+      outline: 3px solid var(--coral);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .faq-icon {
+      flex-shrink: 0;
+      width: 24px;
+      height: 24px;
+      position: relative;
+      transition: transform 0.3s ease;
+    }
+    .faq-icon::before,
+    .faq-icon::after {
+      content: '';
+      position: absolute;
+      background: var(--teal);
+      border-radius: 2px;
+    }
+    .faq-icon::before {
+      top: 50%;
+      left: 4px;
+      right: 4px;
+      height: 2px;
+      transform: translateY(-50%);
+    }
+    .faq-icon::after {
+      left: 50%;
+      top: 4px;
+      bottom: 4px;
+      width: 2px;
+      transform: translateX(-50%);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+    }
+    .faq-item.open .faq-icon::after {
+      transform: translateX(-50%) rotate(90deg);
+      opacity: 0;
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.4s var(--ease), padding 0.4s var(--ease);
+    }
+    .faq-answer-inner {
+      padding-bottom: 24px;
+      font-size: 16px;
+      color: var(--slate);
+      line-height: 1.7;
+    }
+
+    /* ===== FINAL CTA ===== */
+    .final-cta {
+      position: relative;
+      padding: 128px 0;
+      overflow: hidden;
+      text-align: center;
+      color: var(--white);
+    }
+    .final-cta-bg {
+      position: absolute;
+      inset: 0;
+    }
+    .final-cta-bg img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    .final-cta-bg::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(44,95,93,0.85) 0%, rgba(30,67,65,0.92) 100%);
+    }
+    .final-cta .container {
+      position: relative;
+      z-index: 1;
+    }
+    .final-cta h2 {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(36px, 6vw, 56px);
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .final-cta > .container > p {
+      font-size: clamp(17px, 2vw, 20px);
+      opacity: 0.9;
+      margin-bottom: 40px;
+      max-width: 520px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .final-cta-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+    }
+
+    /* ===== FOOTER ===== */
+    .footer {
+      padding: 48px 0;
+      background: var(--charcoal);
+      color: rgba(255,255,255,0.7);
+    }
+    .footer-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 24px;
+      text-align: center;
+    }
+    @media (min-width: 768px) {
+      .footer-inner {
+        flex-direction: row;
+        justify-content: space-between;
+        text-align: left;
+      }
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: 20px;
+      font-weight: 700;
+      color: var(--white);
+    }
+    .footer-logo span { color: var(--coral); }
+    .footer-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .footer-links a {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 14px;
+      transition: color 0.2s ease;
+      min-height: 44px;
+    }
+    .footer-links a:hover { color: var(--white); }
+    .footer-links a:focus-visible {
+      outline: 2px solid var(--coral);
+      outline-offset: 2px;
+      border-radius: 4px;
+    }
+    .footer-links svg {
+      width: 18px;
+      height: 18px;
+    }
+    .footer-bottom {
+      width: 100%;
+      text-align: center;
+      padding-top: 24px;
+      margin-top: 24px;
+      border-top: 1px solid rgba(255,255,255,0.1);
+      font-size: 13px;
+    }
+    .footer-bottom p:last-child {
+      margin-top: 4px;
+      font-style: italic;
+      opacity: 0.6;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (min-width: 1024px) {
+      .pillars { padding: 128px 0; }
+      .community { padding: 128px 0; }
+      .how-it-works { padding: 128px 0; }
+      .faq { padding: 128px 0; }
+    }
+
+    @media (max-width: 767px) {
+      .hero { padding: 0 0 48px; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { justify-content: center; }
+      .final-cta { padding: 96px 0; }
+      .final-cta-buttons { flex-direction: column; align-items: center; }
+    }
+  </style>
+</head>
+<body>
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="container nav-inner">
+      <a href="#" class="nav-logo" aria-label="Dip Club Amsterdam — Home">Dip Club<span>.</span></a>
+      <div class="nav-links" role="menubar">
+        <a href="#pillars" role="menuitem">What We Do</a>
+        <a href="#community" role="menuitem">Community</a>
+        <a href="#how-it-works" role="menuitem">How It Works</a>
+        <a href="#faq" role="menuitem">FAQ</a>
+      </div>
+      <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" class="btn btn-primary nav-cta" style="padding: 10px 20px; font-size: 14px;">
+        Join Us
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-label="Mobile navigation">
+    <a href="#pillars">What We Do</a>
+    <a href="#community">Community</a>
+    <a href="#how-it-works">How It Works</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" class="btn btn-primary" style="margin-top: 16px;">Join Our WhatsApp</a>
+  </div>
+
+  <!-- ===== HERO ===== -->
+  <header class="hero" id="hero">
+    <div class="hero-bg">
+      <img src="https://images.unsplash.com/photo-1504199367641-efa8abbd05f7?w=1920&q=80&auto=format&fit=crop" alt="Group of people laughing and embracing cold water together in Amsterdam" width="1920" height="1080" fetchpriority="high">
+    </div>
+    <div class="hero-grain" aria-hidden="true"></div>
+    <div class="container hero-content">
+      <div class="hero-label">Amsterdam's Urban Wellness Community</div>
+      <h1>Seek <em>Discomfort.</em><br>Find Yourself.</h1>
+      <p class="hero-sub">Join the community that turns cold water into warm connections. Weekly ice baths, breathwork, and outdoor adventures for people who refuse to stay comfortable.</p>
+      <div class="hero-buttons">
+        <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" class="btn btn-white">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Join Our WhatsApp Community
+        </a>
+        <a href="#pillars" class="btn btn-outline-white">
+          Learn More
+        </a>
+      </div>
+      <p class="hero-meta">Free weekly events <span>&bull;</span> 20 people max <span>&bull;</span> All levels welcome</p>
+    </div>
+    <div class="hero-scroll" aria-hidden="true">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+    </div>
+  </header>
+
+  <!-- ===== WHAT WE DO / THREE PILLARS ===== -->
+  <section class="pillars" id="pillars" aria-labelledby="pillars-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label uppercase">What We Do</p>
+        <h2 id="pillars-heading">Three Pillars of <em>Discomfort</em></h2>
+        <p>Every week, we gather to push past the comfortable. Here's how we do it.</p>
+      </div>
+      <div class="pillars-grid">
+        <article class="pillar-card reveal reveal-delay-1">
+          <div class="pillar-img">
+            <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&q=80&auto=format&fit=crop" alt="Person immersed in an ice bath surrounded by nature" width="600" height="450" loading="lazy">
+            <span class="pillar-tag">Every Saturday</span>
+          </div>
+          <div class="pillar-body">
+            <h3>Ice Baths</h3>
+            <p>4&deg;C water. 2-3 minutes. A lifetime of mental clarity. Our guided cold plunges will rewire your relationship with discomfort.</p>
+            <span class="pillar-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+              Guided by certified instructors
+            </span>
+          </div>
+        </article>
+        <article class="pillar-card reveal reveal-delay-2">
+          <div class="pillar-img">
+            <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&q=80&auto=format&fit=crop" alt="Group practicing breathwork meditation outdoors at sunrise" width="600" height="450" loading="lazy">
+            <span class="pillar-tag">Wednesdays</span>
+          </div>
+          <div class="pillar-body">
+            <h3>Breathwork</h3>
+            <p>Wim Hof method, box breathing, and guided sessions that make you feel more alive in 20 minutes than coffee does all week.</p>
+            <span class="pillar-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+              Beginner-friendly sessions
+            </span>
+          </div>
+        </article>
+        <article class="pillar-card reveal reveal-delay-3">
+          <div class="pillar-img">
+            <img src="https://images.unsplash.com/photo-1551632811-561732d1e306?w=600&q=80&auto=format&fit=crop" alt="Friends hiking together through forest trails near Amsterdam" width="600" height="450" loading="lazy">
+            <span class="pillar-tag">Monthly</span>
+          </div>
+          <div class="pillar-body">
+            <h3>Outdoor Adventures</h3>
+            <p>Forest runs, lake swims, sunrise hikes. Because the best conversations happen when you're out of breath and out of your comfort zone.</p>
+            <span class="pillar-detail">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2v20M2 12h20"/></svg>
+              Seasonal surprise events
+            </span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COMMUNITY ===== -->
+  <section class="community" id="community" aria-labelledby="community-heading">
+    <div class="container">
+      <div class="community-grid">
+        <div class="community-images reveal">
+          <div class="img-wrapper img-tall">
+            <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop" alt="Diverse group of friends laughing together after a cold plunge" width="600" height="800" loading="lazy">
+          </div>
+          <div class="img-wrapper img-short">
+            <img src="https://images.unsplash.com/photo-1517457373958-b7bdd4587205?w=400&q=80&auto=format&fit=crop" alt="People high-fiving after completing an ice bath challenge" width="400" height="300" loading="lazy">
+          </div>
+          <div class="img-wrapper img-short">
+            <img src="https://images.unsplash.com/photo-1534367610401-9f5ed68180aa?w=400&q=80&auto=format&fit=crop" alt="Amsterdam canal at dawn with morning mist" width="400" height="300" loading="lazy">
+          </div>
+        </div>
+        <div class="community-content reveal">
+          <p class="section-label uppercase">Our Community</p>
+          <h2 id="community-heading">Find Your <em>Tribe</em> in the Cold</h2>
+          <p>We're not a gym. We're not a wellness brand. We're a group of regular people in Amsterdam who discovered that the fastest way to real connection is shared discomfort. Entrepreneurs, creatives, parents, students &mdash; the cold doesn't care about your job title.</p>
+          <div class="stats-row">
+            <div class="stat">
+              <div class="stat-number" data-target="200">0</div>
+              <div class="stat-label">Brave Souls</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-target="50">0</div>
+              <div class="stat-label">Sessions Done</div>
+            </div>
+            <div class="stat">
+              <div class="stat-number" data-target="4" data-suffix="&deg;C">0</div>
+              <div class="stat-label">Water Temp</div>
+            </div>
+          </div>
+          <div class="testimonial">
+            <blockquote>&ldquo;I came for the ice bath. I stayed for the people. This community changed the way I start my weekends.&rdquo;</blockquote>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=80&q=80&auto=format&fit=crop&crop=face" alt="Portrait of Thomas, a Dip Club member" class="testimonial-avatar" width="40" height="40" loading="lazy">
+              <div>
+                <div class="testimonial-name">Thomas K.</div>
+                <div class="testimonial-role">Member since 2024</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== HOW IT WORKS ===== -->
+  <section class="how-it-works" id="how-it-works" aria-labelledby="how-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label uppercase">How It Works</p>
+        <h2 id="how-heading">Three Steps to Your First <em>Dip</em></h2>
+        <p>No application. No membership fee. Just show up and be willing to feel something.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card reveal reveal-delay-1">
+          <div class="step-number">1</div>
+          <h3>Join the Group</h3>
+          <p>Hop into our WhatsApp community. That's where we share event details, locations, and the occasional cold-water meme.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-2">
+          <div class="step-number">2</div>
+          <h3>Show Up Saturday</h3>
+          <p>We meet every Saturday morning. Bring a towel, warm clothes for after, and the willingness to feel alive. We provide the ice.</p>
+        </div>
+        <div class="step-card reveal reveal-delay-3">
+          <div class="step-number">3</div>
+          <h3>Take the Plunge</h3>
+          <p>Guided breathing. Cold water. Warm people. You'll feel like you're dying for 30 seconds, then more alive than ever. Repeat weekly.</p>
+        </div>
+      </div>
+      <div class="how-cta reveal">
+        <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" class="btn btn-primary">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Join Our WhatsApp Community
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq" id="faq" aria-labelledby="faq-heading">
+    <div class="container">
+      <div class="section-header reveal">
+        <p class="section-label uppercase">FAQ</p>
+        <h2 id="faq-heading">Got <em>Questions?</em></h2>
+        <p>We had them too. Right before our first dip.</p>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item reveal">
+          <button class="faq-question" aria-expanded="false">
+            <span>Do I need experience with cold water?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Absolutely not. Most of our members had never done an ice bath before showing up. We guide you through breathing techniques first, and you go at your own pace. Nobody's going to push you in. (Unless you ask nicely.)
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-1">
+          <button class="faq-question" aria-expanded="false">
+            <span>Is it really free?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Yes. Dip Club is a community, not a business. We split costs for ice and equipment, but there's no membership fee, no subscription, no upsell. Just cold water and good people. Some special events might have a small cost to cover venue rental.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-2">
+          <button class="faq-question" aria-expanded="false">
+            <span>What do I need to bring?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Swimwear, a towel, and warm clothes for after (think: hoodie, beanie, thick socks). We recommend bringing a thermos with hot tea. We provide the ice bath setup, changing space, and pre-plunge breathwork guidance.
+            </div>
+          </div>
+        </div>
+        <div class="faq-item reveal reveal-delay-3">
+          <button class="faq-question" aria-expanded="false">
+            <span>What if I can't handle the cold?</span>
+            <span class="faq-icon" aria-hidden="true"></span>
+          </button>
+          <div class="faq-answer" role="region">
+            <div class="faq-answer-inner">
+              Here's the secret: nobody "handles" the cold. Your body will scream. Your mind will negotiate. And then, around the 30-second mark, something shifts. You realize you're stronger than you thought. But seriously &mdash; there's no pressure. Stay for 10 seconds or 3 minutes. It's your dip.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="final-cta" aria-labelledby="cta-heading">
+    <div class="final-cta-bg">
+      <img src="https://images.unsplash.com/photo-1468276311594-df7cb65d8df6?w=1920&q=80&auto=format&fit=crop" alt="Dramatic cold water landscape at dawn" width="1920" height="1080" loading="lazy">
+    </div>
+    <div class="container">
+      <div class="reveal">
+        <h2 id="cta-heading">Stop Thinking.<br>Start Dipping.</h2>
+        <p>Your comfort zone is overrated. Join 200+ people in Amsterdam who chose discomfort &mdash; and found something better on the other side.</p>
+      </div>
+      <div class="final-cta-buttons reveal reveal-delay-1">
+        <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" class="btn btn-white">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+          Join Our WhatsApp Community
+        </a>
+        <a href="https://www.instagram.com/dipclub.ams/" target="_blank" rel="noopener" class="btn btn-outline-white">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+          Follow @dipclub.ams
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-inner">
+        <a href="#" class="footer-logo" aria-label="Dip Club Amsterdam — Home">Dip Club<span>.</span></a>
+        <div class="footer-links">
+          <a href="mailto:hello@dipclub.nl" aria-label="Email us at hello@dipclub.nl">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            hello@dipclub.nl
+          </a>
+          <a href="https://www.instagram.com/dipclub.ams/" target="_blank" rel="noopener" aria-label="Follow us on Instagram">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            @dipclub.ams
+          </a>
+          <a href="https://chat.whatsapp.com/EJdZ0FDo1z0IkM9ayWujVo?mode=gi_t" target="_blank" rel="noopener" aria-label="Join our WhatsApp community">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c-.001 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2024 Dip Club Amsterdam. All rights reserved.</p>
+        <p>Made with cold hands and warm hearts in Amsterdam</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    /* ===== NAVIGATION ===== */
+    const nav = document.querySelector('.nav');
+    const toggle = document.querySelector('.nav-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const mobileLinks = mobileMenu.querySelectorAll('a');
+
+    // Scroll state
+    let lastScroll = 0;
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 40);
+    }, { passive: true });
+
+    // Mobile menu toggle
+    toggle.addEventListener('click', () => {
+      const isOpen = mobileMenu.classList.toggle('open');
+      toggle.classList.toggle('active');
+      toggle.setAttribute('aria-expanded', isOpen);
+      document.body.style.overflow = isOpen ? 'hidden' : '';
+    });
+
+    mobileLinks.forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('open');
+        toggle.classList.remove('active');
+        toggle.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+
+    /* ===== SCROLL REVEAL ===== */
+    const revealElements = document.querySelectorAll('.reveal');
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          revealObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+    revealElements.forEach(el => revealObserver.observe(el));
+
+    /* ===== ANIMATED COUNTERS ===== */
+    const statNumbers = document.querySelectorAll('.stat-number');
+    let countersStarted = false;
+
+    function animateCounters() {
+      if (countersStarted) return;
+      countersStarted = true;
+
+      statNumbers.forEach(num => {
+        const target = parseInt(num.dataset.target);
+        const suffix = num.dataset.suffix || '+';
+        const duration = 1800;
+        const start = performance.now();
+
+        function step(now) {
+          const elapsed = now - start;
+          const progress = Math.min(elapsed / duration, 1);
+          const eased = 1 - Math.pow(1 - progress, 3);
+          const current = Math.round(eased * target);
+
+          if (suffix === '&deg;C') {
+            num.innerHTML = current + '&deg;C';
+          } else {
+            num.textContent = current + (progress >= 1 ? '+' : '');
+          }
+
+          if (progress < 1) requestAnimationFrame(step);
+        }
+        requestAnimationFrame(step);
+      });
+    }
+
+    const statsObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          animateCounters();
+          statsObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.3 });
+
+    const statsRow = document.querySelector('.stats-row');
+    if (statsRow) statsObserver.observe(statsRow);
+
+    /* ===== FAQ ACCORDION ===== */
+    const faqQuestions = document.querySelectorAll('.faq-question');
+
+    faqQuestions.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.parentElement;
+        const answer = item.querySelector('.faq-answer');
+        const inner = answer.querySelector('.faq-answer-inner');
+        const isOpen = item.classList.contains('open');
+
+        // Close all others
+        document.querySelectorAll('.faq-item.open').forEach(openItem => {
+          if (openItem !== item) {
+            openItem.classList.remove('open');
+            openItem.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+            openItem.querySelector('.faq-answer').style.maxHeight = '0';
+          }
+        });
+
+        item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', !isOpen);
+        answer.style.maxHeight = isOpen ? '0' : inner.scrollHeight + 24 + 'px';
+      });
+    });
+
+    /* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          e.preventDefault();
+          const offset = nav.offsetHeight + 16;
+          const top = target.getBoundingClientRect().top + window.scrollY - offset;
+          window.scrollTo({ top, behavior: 'smooth' });
+        }
+      });
+    });
+  </script>
+</body>
+</html>
