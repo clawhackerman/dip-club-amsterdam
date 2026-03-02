@@ -718,6 +718,11 @@
       text-align: left;
       background-image: url("data:image/svg+xml,%3Csvg width='120' height='20' viewBox='0 0 120 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 10 Q15 0 30 10 Q45 20 60 10 Q75 0 90 10 Q105 20 120 10' fill='none' stroke='%23e8e8e8' stroke-width='1'/%3E%3C/svg%3E");
       background-size: 120px 20px;
+      transition: transform 0.4s var(--ease), border-color 0.4s var(--ease);
+    }
+    .benefit-card:hover {
+      transform: translateY(-6px);
+      border-color: rgba(0,0,0,0.18);
     }
     .benefit-icon {
       width: 48px;
@@ -749,7 +754,7 @@
     /* ===== QUOTE BANNER ===== */
     .quote-banner {
       position: relative;
-      padding: 38vh 0;
+      padding: 24vh 0;
       overflow: hidden;
       text-align: center;
       color: var(--white);
@@ -1617,7 +1622,7 @@
       if (quoteBgImg && quoteBanner) {
         const rect = quoteBanner.getBoundingClientRect();
         if (rect.bottom > 0 && rect.top < window.innerHeight) {
-          const offset = (rect.top - window.innerHeight) * -0.1;
+          const offset = (rect.top - window.innerHeight) * -0.04;
           quoteBgImg.style.transform = 'translateY(' + offset + 'px)';
         }
       }
