@@ -172,20 +172,10 @@
 
     /* ===== NAVIGATION ===== */
     .nav {
-      position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
+      position: relative;
       z-index: 1000;
       background: rgba(220,233,250,0.92);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-bottom: 2px solid var(--teal);
       height: 80px;
-      transition: all 0.3s ease;
-    }
-    .nav.scrolled {
-      box-shadow: 0 2px 20px rgba(0,0,0,0.08);
     }
     .nav-inner {
       display: flex;
