@@ -620,23 +620,23 @@
     }
     .polaroid-3 {
       transform: rotate(2deg);
-      left: 50%;
+      left: 42%;
       margin-left: -140px;
       top: 50%;
       z-index: 2;
     }
-    /* Hover: lift all polaroids up and scale */
-    .community-polaroids:hover .polaroid-1 {
-      transform: rotate(-6deg) scale(1.04) translateY(-12px);
-      z-index: 3;
+    /* Hover: bring individual polaroid to top */
+    .polaroid-1:hover {
+      transform: rotate(-6deg) scale(1.06) translateY(-10px);
+      z-index: 10;
     }
-    .community-polaroids:hover .polaroid-2 {
-      transform: rotate(4deg) scale(1.04) translateY(-12px);
-      z-index: 3;
+    .polaroid-2:hover {
+      transform: rotate(4deg) scale(1.06) translateY(-10px);
+      z-index: 10;
     }
-    .community-polaroids:hover .polaroid-3 {
-      transform: rotate(2deg) scale(1.04) translateY(-12px);
-      z-index: 4;
+    .polaroid-3:hover {
+      transform: rotate(2deg) scale(1.06) translateY(-10px);
+      z-index: 10;
     }
     @media (max-width: 767px) {
       .polaroid-1 { left: -5%; top: 0; }
