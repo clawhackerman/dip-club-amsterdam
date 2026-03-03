@@ -125,9 +125,24 @@
     .btn-primary {
       background: linear-gradient(180deg, var(--cta-orange) 0%, #d4551e 100%);
       color: var(--white);
+      overflow: hidden;
+      z-index: 0;
+    }
+    .btn-primary::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: #d4551e;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: -1;
+    }
+    .btn-primary:hover::after {
+      opacity: 1;
     }
     .btn-primary:hover {
-      background: #d4551e;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.45), 0 0 40px rgba(255, 107, 53, 0.2);
     }
     .btn-secondary {
       background: transparent;
@@ -141,9 +156,24 @@
     .btn-white {
       background: linear-gradient(180deg, var(--cta-orange) 0%, #d4551e 100%);
       color: var(--white);
+      overflow: hidden;
+      z-index: 0;
+    }
+    .btn-white::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: #d4551e;
+      opacity: 0;
+      transition: opacity 0.2s ease;
+      z-index: -1;
+    }
+    .btn-white:hover::after {
+      opacity: 1;
     }
     .btn-white:hover {
-      background: #d4551e;
+      box-shadow: 0 0 20px rgba(255, 107, 53, 0.45), 0 0 40px rgba(255, 107, 53, 0.2);
     }
     .btn-outline-white {
       background: rgba(255,255,255,0.15);
