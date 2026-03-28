@@ -20,9 +20,7 @@ export default function Home() {
           { src: "/media/dc-polaroid-2-dolomites-hike.jpg", alt: "Hiking in the Dolomites" },
           { src: "/media/dc-polaroid-1-amstel-dip.JPG", alt: "Ice dip at the Amstel" },
           { src: "/media/dc-biweekly-dip.jpg", alt: "Monthly cold water dip" },
-          { src: "/media/dc-hero-image-website.png", alt: "Dip Club community" },
           { src: "/media/dc-quarterly-excursion.JPG", alt: "Weekend excursion" },
-          { src: "/media/dc-polaroid-4-dolomites-hike.jpg", alt: "Mountain trail" },
           { src: "/media/dc-annual-adventure-2.JPG", alt: "Annual adventure hike" },
         ]}
       />
