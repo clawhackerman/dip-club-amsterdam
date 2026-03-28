@@ -2,7 +2,6 @@ import Hero from "./components/Hero";
 import ActivityCard from "./components/ActivityCard";
 import ScrollReveal from "./components/ScrollReveal";
 import StatsBar from "./components/StatsBar";
-import WaveDivider from "./components/WaveDivider";
 import PhotoMosaic from "./components/PhotoMosaic";
 import Image from "next/image";
 
@@ -152,18 +151,12 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Wave: offwhite → terracotta */}
-      <WaveDivider topColor="#e8e5e2" bottomColor="#eb6342" />
-
       {/* Stats Bar */}
       <StatsBar stats={[
         { value: "200+", label: "Members" },
         { value: "50+", label: "Events" },
         { value: "3", label: "Countries" },
       ]} />
-
-      {/* Wave: terracotta → offwhite */}
-      <WaveDivider topColor="#eb6342" bottomColor="#e8e5e2" />
 
       {/* Europe Appreciation Section */}
       <section className="bg-offwhite py-24 lg:py-32">
