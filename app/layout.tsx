@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { DM_Sans, Inter, Playfair_Display } from "next/font/google";
 import "./globals.css";
+import Navbar from "./components/Navbar";
 
 const dmSans = DM_Sans({
   variable: "--font-dm-sans",
@@ -35,7 +36,10 @@ export default function RootLayout({
       lang="en"
       className={`${dmSans.variable} ${inter.variable} ${playfairDisplay.variable}`}
     >
-      <body>{children}</body>
+      <body>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
