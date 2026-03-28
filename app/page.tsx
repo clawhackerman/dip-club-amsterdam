@@ -2,7 +2,6 @@ import Hero from "./components/Hero";
 import ActivityCard from "./components/ActivityCard";
 import ScrollReveal from "./components/ScrollReveal";
 import StatsBar from "./components/StatsBar";
-import PhotoMosaic from "./components/PhotoMosaic";
 import Image from "next/image";
 
 export default function Home() {
@@ -14,28 +13,19 @@ export default function Home() {
         description="Amsterdam's urban wellness community. Ice baths, breathwork, and outdoor adventures for those who choose growth over comfort."
         ctaText="Join Our WhatsApp Community →"
         ctaHref="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
+        secondaryCtaText="See Activities ↓"
+        secondaryCtaHref="#activities"
         fullHeight
+        photos={[
+          { src: "/media/dc-polaroid-2-dolomites-hike.jpg", alt: "Hiking in the Dolomites" },
+          { src: "/media/dc-polaroid-1-amstel-dip.JPG", alt: "Ice dip at the Amstel" },
+          { src: "/media/dc-biweekly-dip.jpg", alt: "Monthly cold water dip" },
+          { src: "/media/dc-hero-image-website.png", alt: "Dip Club community" },
+          { src: "/media/dc-quarterly-excursion.JPG", alt: "Weekend excursion" },
+          { src: "/media/dc-polaroid-4-dolomites-hike.jpg", alt: "Mountain trail" },
+          { src: "/media/dc-annual-adventure-2.JPG", alt: "Annual adventure hike" },
+        ]}
       />
-
-      {/* Photo Mosaic — right after hero */}
-      <section className="bg-offwhite pt-0 pb-12">
-        <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
-          <PhotoMosaic
-            photos={[
-              { src: "/media/dc-polaroid-2-dolomites-hike.jpg", alt: "Hiking in the Dolomites", aspect: "tall" },
-              { src: "/media/dc-polaroid-1-amstel-dip.JPG", alt: "Ice dip at the Amstel", aspect: "square" },
-              { src: "/media/dc-biweekly-dip.jpg", alt: "Monthly cold water dip", aspect: "square" },
-              { src: "/media/dc-polaroid-3-south-africa-hike.jpg", alt: "Coastal hike", aspect: "wide" },
-              { src: "/media/dc-quarterly-excursion.JPG", alt: "Weekend excursion", aspect: "square" },
-              { src: "/media/dc-polaroid-4-dolomites-hike.jpg", alt: "Mountain trail", aspect: "tall" },
-              { src: "/media/dc-polaroid-5-amsterdam-dip-spot.jpg", alt: "Amsterdam swimming spot", aspect: "square" },
-              { src: "/media/IMG_2377.jpg", alt: "Community gathering", aspect: "square" },
-              { src: "/media/dc-hero-image-website.png", alt: "Dip Club community", aspect: "wide" },
-              { src: "/media/dc-annual-adventure-2.JPG", alt: "Annual adventure hike", aspect: "square" },
-            ]}
-          />
-        </div>
-      </section>
 
       {/* Intro Section */}
       <section className="bg-offwhite py-24 lg:py-32">
@@ -124,7 +114,7 @@ export default function Home() {
       </section>
 
       {/* Activities Section */}
-      <section className="bg-offwhite py-24 lg:py-32 border-t border-dark/5">
+      <section id="activities" className="bg-offwhite py-24 lg:py-32 border-t border-dark/5 scroll-mt-20">
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <ScrollReveal>
             <h2 className="mb-12 font-heading text-3xl font-extrabold sm:text-4xl lg:text-5xl">
