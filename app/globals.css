@@ -11,7 +11,7 @@
   --color-slate: #5A5A5A;
 
   --font-display: "TAN Tangkiwood", serif;
-  --font-heading: "Inter", system-ui, sans-serif;
+  --font-heading: "Anton SC", "Inter", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
   --font-accent: "Playfair Display", Georgia, serif;
 }
@@ -19,6 +19,14 @@
 @font-face {
   font-family: "TAN Tangkiwood";
   src: url("/fonts/TAN-Tangkiwood-Regular.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Anton SC";
+  src: url("/fonts/AntonSC-Regular.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
