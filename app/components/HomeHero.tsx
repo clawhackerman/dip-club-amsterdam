@@ -39,15 +39,7 @@ export default function HomeHero({
       {/* Orange curtain that slides away */}
       <div
         className={[
-          "absolute inset-0 z-10 bg-terracotta origin-left transition-transform duration-[1400ms] ease-[cubic-bezier(0.76,0,0.24,1)]",
-          revealed ? "translate-x-full" : "translate-x-0",
-        ].join(" ")}
-      />
-
-      {/* Second curtain for staggered effect */}
-      <div
-        className={[
-          "absolute inset-0 z-[9] bg-terracotta-dark origin-left transition-transform duration-[1400ms] ease-[cubic-bezier(0.76,0,0.24,1)] delay-100",
+          "absolute inset-0 z-10 bg-terracotta origin-left transition-transform duration-[900ms] ease-[cubic-bezier(0.76,0,0.24,1)]",
           revealed ? "translate-x-full" : "translate-x-0",
         ].join(" ")}
       />
