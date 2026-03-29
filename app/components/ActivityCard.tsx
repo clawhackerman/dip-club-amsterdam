@@ -22,16 +22,17 @@ export default function ActivityCard({
 }: ActivityCardProps) {
   return (
     <Link href={href} className="group block">
-      <article className="overflow-hidden rounded-lg border border-dark/15 bg-white transition-all duration-300 group-hover:-translate-y-1 group-hover:border-dark/30">
+      <article className="overflow-hidden rounded-lg border-[6px] border-dark bg-white transition-all duration-300 group-hover:-translate-y-1">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={imageSrc}
             alt={imageAlt}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-105"
+            className="object-cover"
             sizes="(max-width: 768px) 100vw, 33vw"
           />
         </div>
+        <div className="border-t-[6px] border-dark" />
         <div className="p-6 flex flex-col gap-3">
           <div className="flex items-center gap-3">
             <h3 className="font-heading text-xl font-extrabold uppercase tracking-wide">

@@ -23,3 +23,10 @@
   font-style: normal;
   font-display: swap;
 }
+
+/* Subtle wavy line background pattern */
+.bg-wavy {
+  background-image: url("data:image/svg+xml,%3Csvg width='120' height='40' viewBox='0 0 120 40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 20 Q15 10 30 20 Q45 30 60 20 Q75 10 90 20 Q105 30 120 20' fill='none' stroke='%23c8c4c0' stroke-width='0.5' opacity='0.5'/%3E%3C/svg%3E");
+  background-repeat: repeat;
+  background-size: 120px 40px;
+}
