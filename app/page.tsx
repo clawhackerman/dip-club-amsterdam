@@ -29,7 +29,7 @@ export default function Home() {
               </p>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.2}>
-              <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px]">
+              <div className="relative h-[300px] overflow-hidden rounded-sm sm:h-[400px]">
                 <Image
                   src="/media/dc-polaroid-5-amsterdam-dip-spot.jpg"
                   alt="Dip Club members at an Amsterdam swimming spot"
@@ -55,7 +55,7 @@ export default function Home() {
               <span className="font-accent italic">wellness</span>
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px bg-dark sm:grid-cols-2 lg:grid-cols-5 rounded-lg overflow-hidden border-[6px] border-dark">
+          <div className="grid gap-px bg-dark sm:grid-cols-2 lg:grid-cols-5 rounded-sm overflow-hidden border-[6px] border-dark">
             {[
               {
                 title: "Cold Exposure",
@@ -156,7 +156,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <div className="flex flex-col gap-12 lg:flex-row lg:items-center lg:gap-20">
             <ScrollReveal className="flex-1 order-2 lg:order-1" delay={0.2}>
-              <div className="relative h-[300px] overflow-hidden rounded-lg sm:h-[400px]">
+              <div className="relative h-[300px] overflow-hidden rounded-sm sm:h-[400px]">
                 <Image
                   src="/media/dc-polaroid-2-dolomites-hike.jpg"
                   alt="Hiking through the European Dolomites"
@@ -191,7 +191,7 @@ export default function Home() {
         <div className="mx-auto max-w-[1320px] px-6 lg:px-12">
           <div className="flex flex-col gap-8 lg:flex-row lg:items-stretch lg:gap-12">
             <ScrollReveal className="flex-1">
-              <div className="h-full flex flex-col justify-center rounded-lg border-[6px] border-dark bg-offwhite p-8 lg:p-12">
+              <div className="h-full flex flex-col justify-center rounded-sm border-[6px] border-dark bg-offwhite p-8 lg:p-12">
                 <h2 className="font-heading text-2xl sm:text-3xl font-extrabold">Contact</h2>
                 <p className="mt-4 text-base text-slate">
                   Got a question?{"\n"}Don&apos;t hesitate to ask us.
@@ -218,7 +218,7 @@ export default function Home() {
               </div>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.15}>
-              <div className="h-full flex flex-col justify-center rounded-lg border-[6px] border-terracotta bg-terracotta p-8 lg:p-12 text-white">
+              <div className="h-full flex flex-col justify-center rounded-sm border-[6px] border-terracotta bg-terracotta p-8 lg:p-12 text-white">
                 <h2 className="font-heading text-2xl sm:text-3xl font-extrabold">Join the community</h2>
                 <p className="mt-4 text-base text-white/80">
                   Be the first to know about upcoming dips, excursions, and adventures.
@@ -227,7 +227,7 @@ export default function Home() {
                   href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="mt-6 w-fit rounded-sm bg-offwhite px-8 py-3 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
+                  className="mt-6 w-fit rounded-none bg-offwhite px-8 py-3 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
                 >
                   Join WhatsApp ↘
                 </a>

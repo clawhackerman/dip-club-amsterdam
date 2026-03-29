@@ -53,7 +53,7 @@ export default function Hero({
           {/* Left: text content */}
           <div className={`flex flex-col gap-4 ${hasVisual ? "lg:flex-1" : "max-w-3xl"}`}>
             {badge && (
-              <span className="rounded-sm bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white w-fit">
+              <span className="rounded-none bg-white/20 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-white w-fit">
                 {badge}
               </span>
             )}
@@ -80,7 +80,7 @@ export default function Hero({
                     {...(isExternal
                       ? { target: "_blank", rel: "noopener noreferrer" }
                       : {})}
-                    className="rounded-sm bg-white px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-white/90 transition-all"
+                    className="rounded-none bg-white px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-white/90 transition-all"
                   >
                     {ctaText}
                   </a>
@@ -88,7 +88,7 @@ export default function Hero({
                 {secondaryCtaText && secondaryCtaHref && (
                   <a
                     href={secondaryCtaHref}
-                    className="rounded-sm border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+                    className="rounded-none border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
                   >
                     {secondaryCtaText}
                   </a>

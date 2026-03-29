@@ -109,7 +109,7 @@ export default function Navbar() {
                             : "text-dark hover:text-terracotta",
                           isActive
                             ? [
-                                "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:rounded-sm",
+                                "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:rounded-none",
                                 isTransparent ? "after:bg-white" : "after:bg-terracotta",
                               ].join(" ")
                             : "",
@@ -132,7 +132,7 @@ export default function Navbar() {
                       {/* Dropdown */}
                       <div
                         className={[
-                          "absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[160px] border border-dark/10 rounded-sm overflow-hidden transition-all duration-200",
+                          "absolute top-full left-1/2 -translate-x-1/2 mt-3 min-w-[160px] border border-dark/10 rounded-none overflow-hidden transition-all duration-200",
                           scrolled ? "bg-white" : "bg-[#e8e5e2]",
                           dropdownOpen
                             ? "opacity-100 translate-y-0 pointer-events-auto"
@@ -169,7 +169,7 @@ export default function Navbar() {
                         : "text-dark hover:text-terracotta",
                       isActive
                         ? [
-                            "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:rounded-sm",
+                            "after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:rounded-none",
                             isTransparent ? "after:bg-white" : "after:bg-terracotta",
                           ].join(" ")
                         : "",
@@ -185,7 +185,7 @@ export default function Navbar() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className={[
-                  "ml-2 px-5 py-2 rounded-sm text-sm font-semibold transition-all duration-200",
+                  "ml-2 px-5 py-2 rounded-none text-sm font-semibold transition-all duration-200",
                   isTransparent
                     ? "bg-white text-dark hover:bg-white/90"
                     : "bg-terracotta text-white hover:bg-terracotta-dark",
@@ -272,7 +272,7 @@ export default function Navbar() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="mt-4 px-8 py-3 rounded-sm bg-terracotta text-white text-base font-semibold hover:bg-terracotta-dark transition-colors duration-200"
+            className="mt-4 px-8 py-3 rounded-none bg-terracotta text-white text-base font-semibold hover:bg-terracotta-dark transition-colors duration-200"
           >
             Join WhatsApp Community
           </a>

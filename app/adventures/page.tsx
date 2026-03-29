@@ -44,7 +44,7 @@ export default function AdventuresPage() {
 
             {/* Right: image */}
             <ScrollReveal delay={0.2} className="flex-1">
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-lg">
+              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-annual-adventure-2.JPG"
                   alt="Dip Club Amsterdam annual adventure"
@@ -80,7 +80,7 @@ export default function AdventuresPage() {
                   "Cost: Shared expenses — transport, accommodation, and food",
                 ].map((item) => (
                   <li key={item} className="flex items-center gap-3 text-base text-slate">
-                    <span className="h-2 w-2 flex-shrink-0 rounded-sm bg-terracotta" />
+                    <span className="h-2 w-2 flex-shrink-0 rounded-none bg-terracotta" />
                     {item}
                   </li>
                 ))}
@@ -89,7 +89,7 @@ export default function AdventuresPage() {
 
             {/* Left: image */}
             <ScrollReveal delay={0.2} className="flex-1">
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-lg">
+              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-polaroid-4-dolomites-hike.jpg"
                   alt="Dolomites hike adventure"
@@ -115,7 +115,7 @@ export default function AdventuresPage() {
               <span className="font-accent italic">everything</span>
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px bg-dark/10 sm:grid-cols-3 rounded-lg overflow-hidden border border-dark/10">
+          <div className="grid gap-px bg-dark/10 sm:grid-cols-3 rounded-sm overflow-hidden border border-dark/10">
             <ScrollReveal delay={0}>
               <div className="bg-offwhite p-6 lg:p-8 h-full">
                 <h3 className="font-heading text-base font-extrabold uppercase tracking-wide">
@@ -176,7 +176,7 @@ export default function AdventuresPage() {
                   "Rest and recover: Don't overtrain the final 2 weeks. Arrive rested, not exhausted.",
                 ].map((item) => (
                   <li key={item} className="flex items-start gap-3 text-base text-slate">
-                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-sm bg-terracotta" />
+                    <span className="mt-2 h-2 w-2 flex-shrink-0 rounded-none bg-terracotta" />
                     {item}
                   </li>
                 ))}
@@ -196,7 +196,7 @@ export default function AdventuresPage() {
           </ScrollReveal>
           <div className="grid gap-4 sm:grid-cols-3">
             <ScrollReveal delay={0.1}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-polaroid-2-dolomites-hike.jpg"
                   alt="Dolomites hike"
@@ -207,7 +207,7 @@ export default function AdventuresPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.2}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-polaroid-3-south-africa-hike.jpg"
                   alt="South Africa hike"
@@ -218,7 +218,7 @@ export default function AdventuresPage() {
               </div>
             </ScrollReveal>
             <ScrollReveal delay={0.3}>
-              <div className="group relative aspect-[4/3] overflow-hidden rounded-lg">
+              <div className="group relative aspect-[4/3] overflow-hidden rounded-sm">
                 <Image
                   src="/media/IMG_6342.jpg"
                   alt="Adventure photo"
@@ -247,7 +247,7 @@ export default function AdventuresPage() {
             <div className="mt-8 flex flex-col sm:flex-row sm:justify-center items-center gap-4">
               <a
                 href="#"
-                className="inline-block rounded-sm bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
+                className="inline-block rounded-none bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
               >
                 Sign Up for Next Adventure ↘
               </a>
@@ -255,7 +255,7 @@ export default function AdventuresPage() {
                 href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-sm border-2 border-white text-white px-8 py-3.5 text-sm font-semibold hover:bg-offwhite hover:text-dark transition-all"
+                className="inline-block rounded-none border-2 border-white text-white px-8 py-3.5 text-sm font-semibold hover:bg-offwhite hover:text-dark transition-all"
               >
                 Join WhatsApp
               </a>

@@ -22,7 +22,7 @@ export default function ActivityCard({
 }: ActivityCardProps) {
   return (
     <Link href={href} className="group block">
-      <article className="overflow-hidden rounded-lg border-[6px] border-dark bg-white transition-all duration-300 group-hover:-translate-y-1">
+      <article className="overflow-hidden rounded-none border-[6px] border-dark bg-white transition-all duration-300 group-hover:-translate-y-1">
         <div className="relative aspect-[4/3] overflow-hidden">
           <Image
             src={imageSrc}
@@ -38,7 +38,7 @@ export default function ActivityCard({
             <h3 className="font-heading text-xl font-extrabold uppercase tracking-wide">
               {title}
             </h3>
-            <span className={`rounded-sm px-3 py-0.5 text-xs font-semibold text-white ${accentColor}`}>
+            <span className={`rounded-none px-3 py-0.5 text-xs font-semibold text-white ${accentColor}`}>
               {frequency}
             </span>
           </div>

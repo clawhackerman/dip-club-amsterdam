@@ -50,7 +50,7 @@ export default function HeroMosaic({ photos }: HeroMosaicProps) {
     <div
       key={photo.src}
       data-hero-tile
-      className={`group relative ${flex} min-h-0 overflow-hidden rounded-sm opacity-0 translate-y-6 transition-all duration-700 ease-out`}
+      className={`group relative ${flex} min-h-0 overflow-hidden rounded-none opacity-0 translate-y-6 transition-all duration-700 ease-out`}
     >
       <Image
         src={photo.src}

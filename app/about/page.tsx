@@ -39,7 +39,7 @@ export default function AboutPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.2}>
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-lg">
+              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-polaroid-1-amstel-dip.JPG"
                   alt="The first Dip Club swim at the Amstel"
@@ -78,7 +78,7 @@ export default function AboutPage() {
               </p>
             </ScrollReveal>
             <ScrollReveal className="flex-1" delay={0.2}>
-              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-lg">
+              <div className="relative h-[300px] sm:h-[400px] overflow-hidden rounded-sm">
                 <Image
                   src="/media/dc-polaroid-2-dolomites-hike.jpg"
                   alt="Dip Club community hiking together"
@@ -103,7 +103,7 @@ export default function AboutPage() {
               Not a fitness club. Not a wellness brand.
             </h2>
           </ScrollReveal>
-          <div className="grid gap-px bg-dark/10 sm:grid-cols-3 rounded-lg overflow-hidden border border-dark/10">
+          <div className="grid gap-px bg-dark/10 sm:grid-cols-3 rounded-sm overflow-hidden border border-dark/10">
             <ScrollReveal delay={0}>
               <div className="bg-offwhite p-6 lg:p-8 h-full">
                 <h3 className="font-heading text-base font-extrabold uppercase tracking-wide">
@@ -158,7 +158,7 @@ export default function AboutPage() {
               href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-8 inline-block rounded-sm bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
+              className="mt-8 inline-block rounded-none bg-offwhite px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-offwhite/90 transition-all"
             >
               Join WhatsApp Community ↘
             </a>

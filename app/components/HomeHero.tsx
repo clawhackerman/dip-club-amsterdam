@@ -87,13 +87,13 @@ export default function HomeHero({
               href="https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl"
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-sm bg-white px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-white/90 transition-all"
+              className="rounded-none bg-white px-8 py-3.5 text-sm font-semibold text-dark hover:scale-[1.02] hover:bg-white/90 transition-all"
             >
               Join Our WhatsApp Community ↘
             </a>
             <a
               href="#activities"
-              className="rounded-sm border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
+              className="rounded-none border border-white/40 px-8 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-all"
             >
               See Activities ↘
             </a>

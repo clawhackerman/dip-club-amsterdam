@@ -66,7 +66,7 @@ export default function PhotoMosaic({ photos }: PhotoMosaicProps) {
             key={photo.src}
             data-mosaic-item
             data-delay={delays[i % delays.length]}
-            className={`group relative overflow-hidden rounded-lg opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out ${spanClass} ${aspectClass}`}
+            className={`group relative overflow-hidden rounded-sm opacity-0 translate-y-8 scale-95 transition-all duration-700 ease-out ${spanClass} ${aspectClass}`}
           >
             <Image
               src={photo.src}
