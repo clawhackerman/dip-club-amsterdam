@@ -78,9 +78,9 @@ export default function Home() {
                   "From Amsterdam's waterways to European mountain trails — we get outside. Nature is the gym, the therapy room, and the classroom all at once.",
               },
               {
-                title: "Real Food",
+                title: "Real Connection",
                 description:
-                  "Post-dip coffee, shared meals on excursions, cooking together on adventures. Breaking bread together is how strangers become friends.",
+                  "Shared discomfort breaks down walls faster than any networking event. Cold water, long trails, and honest conversations — that's how strangers become friends.",
               },
             ].map((pillar, i) => (
               <ScrollReveal key={pillar.title} delay={i * 0.08}>
