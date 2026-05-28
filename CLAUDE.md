@@ -1,99 +1,50 @@
-# Dip Club Amsterdam Website
+# Dip Club Amsterdam Website — Claude Instructions
 
-## Project Overview
-Multi-page marketing website for Dip Club Amsterdam - an urban wellness community hosting weekly ice baths, breathwork, and outdoor activities. Built with Next.js as a static export deployed on Vercel.
+Static marketing site for Dip Club Amsterdam (urban wellness community: ice baths, breathwork, outdoor activities). Internal Ryzo side project. Next.js 15 static export on Vercel.
 
-## Deployment Setup
+## Dev Commands
 
-### GitHub Repository
-1. Initialize git: `git init`
-2. Create `.gitignore` with: `node_modules/`, `.DS_Store`, `.env.local`, `.vercel`, `.next/`, `out/`
-3. Make initial commit
-4. Create GitHub repo: `gh repo create dip-club-amsterdam --public --source=.`
-5. Push: `git push -u origin main`
+```bash
+npm run dev      # localhost:3000
+npm run build    # static export to /out
+npm run lint
+```
 
-### Vercel Deployment
-This project deploys a Next.js static site via `next export` (output: 'export' in next.config.ts).
+Deploy: `git push` to main → Vercel auto-deploys. No separate deploy step needed.
 
-1. Install Vercel CLI: `npm i -g vercel`
-2. Run `vercel` in project directory
-3. Link to GitHub for automatic deployments on push
-4. Set up custom domain: dipclub.ams (if available)
-5. Enable automatic deployments on push to main
+## Stack & Gotchas
 
-### Environment Variables (if needed)
-- WHATSAPP_GROUP_LINK=https://chat.whatsapp.com/Hgi483zWWtQ3XWt0dBnfnl
-- INSTAGRAM_HANDLE=https://www.instagram.com/dipclub.ams/
-- CONTACT_EMAIL=hello@dipclub.nl
+- **Static export** (`output: 'export'` in next.config.ts) — no server-side features. No API routes, no middleware, no `cookies()`, no `headers()`.
+- **Tailwind v4** — custom theme values live in `globals.css` under `@theme {}` block, not in `tailwind.config.ts`. Don't add a config file.
+- WhatsApp join link is the **primary conversion CTA** on every page — don't remove or bury it.
+- `ScrollReveal` uses `IntersectionObserver` — add `"use client"` to any component using it.
+- **React 19** required — next-mdx-remote@6 needs React 19 to work with Next.js 15 RSC rendering.
 
-## Brand Identity
-- **Tone**: Conversational, energetic, challenging but inclusive
-- **Target**: Urban professionals, entrepreneurs, freelancers seeking real connection
-- **Core message**: "Seek Discomfort. Find Yourself."
-- **Visual inspiration**: Wayo adventure travel template - clean, modern, image-forward
+## Design Constraints (non-negotiable)
 
-## Technical Requirements
-- Multi-page responsive website with Next.js App Router
-- Mobile-first design (breakpoints: 375px, 768px, 1024px, 1440px)
-- WhatsApp CTA as primary conversion point
-- Fast loading, static export (no server required)
-- Deploy to Vercel with GitHub integration
+- Dark background `#0e0e0e`, yellow `#FFE034` accent, red `#E8372A` for danger elements
+- Display font: Anton SC (Google Fonts, loaded via next/font); body: Fredoka
+- Load all Google Fonts via `next/font/google` in `layout.tsx` — no `<link>` tags
+- Keep page.tsx clean: imports + section composition only, no JSX logic in the root page
 
-## Tech Stack
-- Next.js 15 (App Router, static export via `output: 'export'`)
-- TypeScript
-- Tailwind CSS v4
-- Vercel (static hosting)
-- No heavy client-side frameworks — pages are statically pre-rendered
+## Structure
 
-## Page Structure
+```
+app/
+  layout.tsx          → fonts + global styles
+  page.tsx            → section composition only
+  components/         → one file per section/component
+  field-notes/        → blog listing + [slug] post pages
+lib/
+  field-notes.ts      → getAllPosts(), getPostBySlug() — data utilities
+content/
+  field-notes/        → .mdx blog posts (frontmatter: title, date, pillars, excerpt, coverImage)
+```
 
-The site has four pages sharing a common Navbar and Footer:
+## Key Rules
 
-### `/` — Home
-- Hero section: full-viewport, headline "Seek Discomfort. Find Yourself.", WhatsApp CTA
-- Intro / What We Do: 3-pillar cards (Dips, Excursions, Adventures)
-- Stats row + Community section
-- Contact / Final CTA section
-
-### `/dips` — Weekly Ice Baths
-- Details on the weekly dip events, schedule, what to expect
-- WhatsApp join CTA
-
-### `/excursions` — Local Excursions
-- Day trips and outdoor activities around Amsterdam/Netherlands
-- Event listings and CTA
-
-### `/adventures` — Bigger Adventures
-- Multi-day trips, international excursions
-- Event listings and CTA
-
-### Shared Components
-- `Navbar` — sticky navigation with links to all four pages
-- `Footer` — contact info, social links, copyright
-- `WaveDivider` — SVG wave transitions between sections
-- `ScrollReveal` — scroll-triggered fade-in animations
-
-## Design Elements
-- **Cards**: Rounded corners (12-16px), subtle shadows on hover
-- **Images**: Full-bleed with text overlays, rounded corners on cards
-- **Grid**: CSS Grid / Tailwind grid for pillar cards (3-column desktop, 1-column mobile)
-- **Spacing**: Generous white space, consistent vertical rhythm
-- **Animations**: Smooth hover states, fade-in on scroll (ScrollReveal component)
-- **Typography**: Large headings, Inter Display for display text, orange brand accents
-
-## Key Features
-- Static export — all pages pre-rendered at build time
-- WhatsApp link integration (primary CTA across all pages)
-- Instagram integration (@dipclub.ams)
-- Email link (hello@dipclub.nl)
-- Mobile-optimized for on-the-go signups
-- Scroll-triggered animations via ScrollReveal component
-
-## Success Criteria
-- WhatsApp community clicks (primary metric)
-- Mobile bounce rate < 40%
-- Page loads under 3 seconds
-- Clear value proposition within 5 seconds
-- All images optimized and lazy-loaded
-- Perfect Lighthouse score (90+ across all metrics)
+- Don't add server-side features — this is a static export
+- Don't hardcode WhatsApp/Instagram/email links in components — read from `content/` or props
+- Don't change section order without explicit instruction
+- All images via `next/image` with explicit width + height
+- Field Notes pillars must match exactly: Cold Exposure, Heat Exposure, Breathwork, Time in Nature, Real Connection
