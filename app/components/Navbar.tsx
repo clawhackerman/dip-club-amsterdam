@@ -16,6 +16,7 @@ const NAV_LINKS = [
   { label: "About", href: "/about" },
   { label: "Manifesto", href: "/manifesto" },
   { label: "Activities", href: "/dips", children: ACTIVITY_LINKS },
+  { label: "Field Notes", href: "/field-notes" },
   { label: "Contact", href: "/contact" },
 ];
 
