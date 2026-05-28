@@ -10,7 +10,7 @@ export function PullQuote({ children }: { children: React.ReactNode }) {
 
 export function Callout({ children }: { children: React.ReactNode }) {
   return (
-    <div className="my-6 border-l-4 border-dark bg-yellow px-6 py-4 text-dark">
+    <div className="my-6 border-l-4 border-dark bg-[#FFE034] px-6 py-4 text-dark">
       {children}
     </div>
   );
